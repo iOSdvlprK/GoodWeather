@@ -75,14 +75,47 @@
                     <view key="view" contentMode="scaleToFill" id="pJR-Jn-cLV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aP4-yz-WWN">
+                                <rect key="frame" x="16" y="141" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0O-c3-jd3">
+                                <rect key="frame" x="166" y="204" width="61" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveCityButtonPressed" destination="qDK-dA-D08" eventType="touchUpInside" id="mZJ-l2-Jue"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WiT-eO-aig"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="y0O-c3-jd3" firstAttribute="top" secondItem="aP4-yz-WWN" secondAttribute="bottom" constant="29" id="Osh-xo-DXh"/>
+                            <constraint firstItem="aP4-yz-WWN" firstAttribute="centerX" secondItem="y0O-c3-jd3" secondAttribute="centerX" id="WVO-BJ-wJZ"/>
+                            <constraint firstItem="aP4-yz-WWN" firstAttribute="trailing" secondItem="pJR-Jn-cLV" secondAttribute="trailingMargin" id="c1c-wJ-Yvj"/>
+                            <constraint firstItem="aP4-yz-WWN" firstAttribute="leading" secondItem="pJR-Jn-cLV" secondAttribute="leadingMargin" id="j2S-7c-qsX"/>
+                            <constraint firstItem="aP4-yz-WWN" firstAttribute="top" secondItem="WiT-eO-aig" secondAttribute="top" constant="97" id="rwl-P5-cQ5"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add City" id="hgJ-93-H8V"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add City" id="cfA-40-0E6">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="2oe-Z8-i3W">
+                            <connections>
+                                <action selector="close" destination="qDK-dA-D08" id="fzt-0x-AKp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cityNameTextField" destination="aP4-yz-WWN" id="Iae-4h-IZO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfQ-Ok-YBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="-30"/>
+            <point key="canvasLocation" x="1881.679389312977" y="-30.281690140845072"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="61B-V0-AvZ">
