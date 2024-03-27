@@ -45,8 +45,7 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         let weatherVM = self.weatherListViewModel.modelAt(indexPath.row)
-        cell.cityNameLabel.text = weatherVM.name
-        cell.temperatureLabel.text = "\(weatherVM.currentTemperature.temperature)°C"
+        cell.configure(weatherVM)
         return cell
     }
 }
