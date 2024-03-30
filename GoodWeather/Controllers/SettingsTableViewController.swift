@@ -21,8 +21,15 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // uncheck all cells
+        tableView.visibleCells.forEach { cell in
+            cell.accessoryType = .none
+        }
+        
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
+            let unit = Unit.allCases[indexPath.row]
+            self.settingsViewModel.selectedUnit = unit
         }
     }
     
@@ -44,6 +51,11 @@ class SettingsTableViewController: UITableViewController {
         let settingsItem = self.settingsViewModel.units[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
         cell.textLabel?.text = settingsItem.displayName
+        
+        if settingsItem == self.settingsViewModel.selectedUnit {
+            cell.accessoryType = .checkmark
+        }
+        
         return cell
     }
 }
